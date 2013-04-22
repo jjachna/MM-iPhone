@@ -18,8 +18,6 @@
 		82062AFE1721C3B600E41D75 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82062AFD1721C3B600E41D75 /* Default-568h@2x.png */; };
 		82062B011721C3B600E41D75 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82062AFF1721C3B600E41D75 /* MainStoryboard.storyboard */; };
 		82062B041721C3B600E41D75 /* MMGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82062B031721C3B600E41D75 /* MMGameViewController.m */; };
-		82062B061721C3B600E41D75 /* game.png in Resources */ = {isa = PBXBuildFile; fileRef = 82062B051721C3B600E41D75 /* game.png */; };
-		82062B081721C3B600E41D75 /* game@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82062B071721C3B600E41D75 /* game@2x.png */; };
 		82062B0B1721C3B600E41D75 /* MMHighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82062B0A1721C3B600E41D75 /* MMHighScoreViewController.m */; };
 		82062B0D1721C3B600E41D75 /* scores.png in Resources */ = {isa = PBXBuildFile; fileRef = 82062B0C1721C3B600E41D75 /* scores.png */; };
 		82062B0F1721C3B600E41D75 /* scores@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82062B0E1721C3B600E41D75 /* scores@2x.png */; };
@@ -29,6 +27,9 @@
 		82062B1D1721C59400E41D75 /* unconn.png in Resources */ = {isa = PBXBuildFile; fileRef = 82062B181721C59400E41D75 /* unconn.png */; };
 		82062B1E1721C59400E41D75 /* Red Dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 82062B191721C59400E41D75 /* Red Dot.png */; };
 		82062B201721CCE300E41D75 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82062B1F1721CCE300E41D75 /* CoreMotion.framework */; };
+		82062B22172395ED00E41D75 /* MarbleMaze114.png in Resources */ = {isa = PBXBuildFile; fileRef = 82062B21172395ED00E41D75 /* MarbleMaze114.png */; };
+		82062B2717244DA900E41D75 /* game.png in Resources */ = {isa = PBXBuildFile; fileRef = 82062B2517244DA900E41D75 /* game.png */; };
+		82062B2817244DA900E41D75 /* game@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 82062B2617244DA900E41D75 /* game@x2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +49,6 @@
 		82062B001721C3B600E41D75 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		82062B021721C3B600E41D75 /* MMGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMGameViewController.h; sourceTree = "<group>"; };
 		82062B031721C3B600E41D75 /* MMGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMGameViewController.m; sourceTree = "<group>"; };
-		82062B051721C3B600E41D75 /* game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game.png; sourceTree = "<group>"; };
-		82062B071721C3B600E41D75 /* game@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game@2x.png"; sourceTree = "<group>"; };
 		82062B091721C3B600E41D75 /* MMHighScoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMHighScoreViewController.h; sourceTree = "<group>"; };
 		82062B0A1721C3B600E41D75 /* MMHighScoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMHighScoreViewController.m; sourceTree = "<group>"; };
 		82062B0C1721C3B600E41D75 /* scores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scores.png; sourceTree = "<group>"; };
@@ -60,6 +59,9 @@
 		82062B181721C59400E41D75 /* unconn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unconn.png; path = ../unconn.png; sourceTree = "<group>"; };
 		82062B191721C59400E41D75 /* Red Dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Red Dot.png"; path = "../Red Dot.png"; sourceTree = "<group>"; };
 		82062B1F1721CCE300E41D75 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		82062B21172395ED00E41D75 /* MarbleMaze114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MarbleMaze114.png; sourceTree = SOURCE_ROOT; };
+		82062B2517244DA900E41D75 /* game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game.png; path = ../game.png; sourceTree = "<group>"; };
+		82062B2617244DA900E41D75 /* game@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game@x2.png"; path = "../game@x2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,15 +117,16 @@
 				82062B031721C3B600E41D75 /* MMGameViewController.m */,
 				82062B091721C3B600E41D75 /* MMHighScoreViewController.h */,
 				82062B0A1721C3B600E41D75 /* MMHighScoreViewController.m */,
-				82062B051721C3B600E41D75 /* game.png */,
-				82062B071721C3B600E41D75 /* game@2x.png */,
 				82062B0C1721C3B600E41D75 /* scores.png */,
 				82062B0E1721C3B600E41D75 /* scores@2x.png */,
+				82062B2517244DA900E41D75 /* game.png */,
+				82062B2617244DA900E41D75 /* game@x2.png */,
 				82062B151721C59400E41D75 /* HorizBar.png */,
 				82062B161721C59400E41D75 /* VertBar.png */,
 				82062B171721C59400E41D75 /* conn.png */,
 				82062B181721C59400E41D75 /* unconn.png */,
 				82062B191721C59400E41D75 /* Red Dot.png */,
+				82062B21172395ED00E41D75 /* MarbleMaze114.png */,
 				82062AEE1721C3B600E41D75 /* Supporting Files */,
 			);
 			path = MarbleMaze;
@@ -200,8 +203,6 @@
 				82062AFC1721C3B600E41D75 /* Default@2x.png in Resources */,
 				82062AFE1721C3B600E41D75 /* Default-568h@2x.png in Resources */,
 				82062B011721C3B600E41D75 /* MainStoryboard.storyboard in Resources */,
-				82062B061721C3B600E41D75 /* game.png in Resources */,
-				82062B081721C3B600E41D75 /* game@2x.png in Resources */,
 				82062B0D1721C3B600E41D75 /* scores.png in Resources */,
 				82062B0F1721C3B600E41D75 /* scores@2x.png in Resources */,
 				82062B1A1721C59400E41D75 /* HorizBar.png in Resources */,
@@ -209,6 +210,9 @@
 				82062B1C1721C59400E41D75 /* conn.png in Resources */,
 				82062B1D1721C59400E41D75 /* unconn.png in Resources */,
 				82062B1E1721C59400E41D75 /* Red Dot.png in Resources */,
+				82062B22172395ED00E41D75 /* MarbleMaze114.png in Resources */,
+				82062B2717244DA900E41D75 /* game.png in Resources */,
+				82062B2817244DA900E41D75 /* game@x2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

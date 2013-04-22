@@ -14,10 +14,39 @@
 
 @implementation MMHighScoreViewController
 
+-(id)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    
+    [highScores setString:[ud stringForKey:@"highScores"]];
+    
+    //NSURLRequest for high scores.
+    
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:highScores forKey:@"highScores"];
 }
 
 - (void)didReceiveMemoryWarning

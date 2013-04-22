@@ -12,7 +12,6 @@
 {
     IBOutlet UILabel *xLabel;
     IBOutlet UILabel *yLabel;
-    IBOutlet UILabel *zLabel;
     
     IBOutlet UIImageView *redBall;
     IBOutlet UIImageView *connStatus;

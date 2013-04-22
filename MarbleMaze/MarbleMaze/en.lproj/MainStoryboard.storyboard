@@ -189,7 +189,6 @@
                 <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="xLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="yLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="zLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="MMHighScoreViewController" superclassName="UIViewController">

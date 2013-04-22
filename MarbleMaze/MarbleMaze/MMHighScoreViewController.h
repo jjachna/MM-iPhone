@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface MMHighScoreViewController : UIViewController
+{
+    NSMutableString *highScores;
+    NSMutableDictionary *highScoreDict;
+}
 
 @end

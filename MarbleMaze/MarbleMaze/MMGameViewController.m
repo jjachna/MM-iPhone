@@ -50,7 +50,6 @@
 {
     xLabel.text = [NSString stringWithFormat:@"%.2f",(180/M_PI)*self.manager.deviceMotion.attitude.pitch];
     yLabel.text = [NSString stringWithFormat:@"%.2f", ((180/M_PI)*self.manager.deviceMotion.attitude.roll)];
-    zLabel.text = [NSString stringWithFormat:@"%.2f",(-180/M_PI)*self.manager.deviceMotion.attitude.yaw];
     
     if (isConnected)
     {
@@ -60,7 +59,7 @@
         urlConnection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:YES];
     }
     
-    redBall.transform = CGAffineTransformMakeTranslation(2.5*(180/M_PI)*self.manager.deviceMotion.attitude.pitch, -1.5*(180/M_PI)*self.manager.deviceMotion.attitude.roll);
+    redBall.transform = CGAffineTransformMakeTranslation(2.5*(180/M_PI)*self.manager.deviceMotion.attitude.pitch, -2.5*(180/M_PI)*self.manager.deviceMotion.attitude.roll);
     
 }
 
