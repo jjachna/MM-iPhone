@@ -32,9 +32,9 @@
 		82062B2817244DA900E41D75 /* game@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 82062B2617244DA900E41D75 /* game@x2.png */; };
 		822586B117276066007121D2 /* Properties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 822586B017276066007121D2 /* Properties.plist */; };
 		822586B317278DB4007121D2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822586B217278DB4007121D2 /* AVFoundation.framework */; };
-		822586B71727916F007121D2 /* begin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 822586B41727916F007121D2 /* begin.wav */; };
 		822586B81727916F007121D2 /* connect.aif in Resources */ = {isa = PBXBuildFile; fileRef = 822586B51727916F007121D2 /* connect.aif */; };
 		822586B91727916F007121D2 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 822586B61727916F007121D2 /* win.wav */; };
+		822586BB17283000007121D2 /* begin.aif in Resources */ = {isa = PBXBuildFile; fileRef = 822586BA17283000007121D2 /* begin.aif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,9 +69,9 @@
 		82062B2617244DA900E41D75 /* game@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game@x2.png"; path = "../game@x2.png"; sourceTree = "<group>"; };
 		822586B017276066007121D2 /* Properties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Properties.plist; sourceTree = "<group>"; };
 		822586B217278DB4007121D2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		822586B41727916F007121D2 /* begin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = begin.wav; sourceTree = "<group>"; };
 		822586B51727916F007121D2 /* connect.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = connect.aif; sourceTree = "<group>"; };
 		822586B61727916F007121D2 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
+		822586BA17283000007121D2 /* begin.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = begin.aif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +140,7 @@
 				82062B181721C59400E41D75 /* unconn.png */,
 				82062B191721C59400E41D75 /* Red Dot.png */,
 				82062B21172395ED00E41D75 /* MarbleMaze114.png */,
-				822586B41727916F007121D2 /* begin.wav */,
+				822586BA17283000007121D2 /* begin.aif */,
 				822586B51727916F007121D2 /* connect.aif */,
 				822586B61727916F007121D2 /* win.wav */,
 				82062AEE1721C3B600E41D75 /* Supporting Files */,
@@ -230,9 +230,9 @@
 				82062B2717244DA900E41D75 /* game.png in Resources */,
 				82062B2817244DA900E41D75 /* game@x2.png in Resources */,
 				822586B117276066007121D2 /* Properties.plist in Resources */,
-				822586B71727916F007121D2 /* begin.wav in Resources */,
 				822586B81727916F007121D2 /* connect.aif in Resources */,
 				822586B91727916F007121D2 /* win.wav in Resources */,
+				822586BB17283000007121D2 /* begin.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

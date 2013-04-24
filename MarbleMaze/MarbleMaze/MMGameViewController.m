@@ -77,7 +77,7 @@
          * Here we grab our path to our resource
          */
         NSString* resourcePath = [[NSBundle mainBundle] resourcePath];
-        resourcePath = [resourcePath stringByAppendingString:@"/begin.wav"];
+        resourcePath = [resourcePath stringByAppendingString:@"/begin.aif"];
         NSError* err;
         
         //Initialize our player pointing to the path to our resource
@@ -135,11 +135,12 @@
             {
                 NSLog(@"You Win!!!!!=========");
                 gameRunning = NO;
+                [endPlayer play];
             }
         }
     }
     
-    redBall.transform = CGAffineTransformMakeTranslation(2.5*(180/M_PI)*self.manager.deviceMotion.attitude.pitch, -2.5*(180/M_PI)*self.manager.deviceMotion.attitude.roll);
+    redBall.transform = CGAffineTransformMakeTranslation(2.5*(180/M_PI)*self.manager.deviceMotion.attitude.pitch, -1.25*(180/M_PI)*self.manager.deviceMotion.attitude.roll);
 }
 
 - (void)reconnectToServer:(id)sender
