@@ -1,5 +1,5 @@
 //
-//  MMSecondViewController.m
+//  MMHighScoreViewController.m
 //  MarbleMaze
 //
 //  Created by John Jachna on 4/19/13.
@@ -19,7 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    highScores = [[NSMutableString alloc] initWithString:@"initialized"];
+    highScores = [[NSMutableString alloc] initWithString:@"*uninitialized*"];
     highScoreArray = [[NSMutableArray alloc] init];
     
     CGRect horizFrame = CGRectMake(0, 0, 480, 300);
@@ -34,7 +34,7 @@
 {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     
-    [highScores setString:[ud stringForKey:@"highScores"]];
+    //[highScores setString:[ud stringForKey:@"highScores"]];
     
     //NSURLRequest for high scores.
     
@@ -56,7 +56,7 @@
         
         if ((responseBody != nil) && (responseBody.length > 0))
         {
-            NSLog(@"Load from Server");
+            NSLog(@"Load from Server: %@", responseBody);
             [ud setObject:responseBody forKey:@"highScores"];
             NSArray *tempArray = [responseBody componentsSeparatedByString: @","];
             for (NSString *item in tempArray)

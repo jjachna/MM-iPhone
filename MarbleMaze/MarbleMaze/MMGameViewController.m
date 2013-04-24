@@ -1,5 +1,5 @@
 //
-//  MMFirstViewController.m
+//  MMGameViewController.m
 //  MarbleMaze
 //
 //  Created by John Jachna on 4/19/13.
@@ -38,13 +38,19 @@
     //CURRENT_SERVER = @"192.168.2.1"; // Raspberry Pi AP IP
     //    CURRENT_SERVER = @"192.168.2.11"; // Local Network
     
-    NSString *str = [NSString stringWithFormat:@"http://%@/connect", CURRENT_SERVER];
-    NSLog(@"%@", str);
-    NSURL *url = [NSURL URLWithString:str];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    urlConnection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:YES];
-    [spinner startAnimating];
-    
+    @try
+    {
+        NSString *str = [NSString stringWithFormat:@"http://%@/connect", CURRENT_SERVER];
+        NSLog(@"%@", str);
+        NSURL *url = [NSURL URLWithString:str];
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+        urlConnection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:YES];
+        [spinner startAnimating];
+    }
+    @catch (NSException *e)
+    {
+        NSLog(@"Excepting: %@", e);
+    }
     
     self.manager = [[CMMotionManager alloc] init];
     [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(getValues:) userInfo:nil repeats:YES];
@@ -103,10 +109,34 @@
     
     if (isConnected)
     {
+        if (gameRunning)
+        {
+            currentTime = -1*[startTime timeIntervalSinceNow];
+            timeLabel.text = [NSString stringWithFormat:@"%.1f", currentTime];
+        }
+        
         NSString *str = [NSString stringWithFormat:@"http://%@/position/x=%@_y=%@", CURRENT_SERVER, xLabel.text, yLabel.text];
         NSURL *url = [NSURL URLWithString:str];
         NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-        urlConnection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:YES];
+        
+        NSData *returnData = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:nil error:nil];
+        NSString *responseBody = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+        
+        if ((responseBody != nil) && responseBody.length > 0)
+        {
+            if ([responseBody isEqualToString:@"GS"] && !gameRunning)
+            {
+                startTime = [NSDate date];
+                NSLog(@"Game Starting================");
+                gameRunning = YES;
+                [beginPlayer play];
+            }
+            else if (([responseBody rangeOfString:@"T"].location != NSNotFound) && gameRunning)
+            {
+                NSLog(@"You Win!!!!!=========");
+                gameRunning = NO;
+            }
+        }
     }
     
     redBall.transform = CGAffineTransformMakeTranslation(2.5*(180/M_PI)*self.manager.deviceMotion.attitude.pitch, -2.5*(180/M_PI)*self.manager.deviceMotion.attitude.roll);

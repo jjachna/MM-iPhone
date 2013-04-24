@@ -1,5 +1,5 @@
 //
-//  MMFirstViewController.h
+//  MMGameViewController.h
 //  MarbleMaze
 //
 //  Created by John Jachna on 4/19/13.
@@ -19,6 +19,7 @@
     IBOutlet UIActivityIndicatorView *spinner;
     
     BOOL isConnected;
+    BOOL gameRunning;
     
     NSURLConnection *urlConnection;
     NSMutableData *xmlData;
@@ -27,7 +28,10 @@
     AVAudioPlayer* beginPlayer;
     AVAudioPlayer* endPlayer;
     
+    IBOutlet UILabel *timeLabel;
     UIAlertView *message;
+    NSTimeInterval currentTime;
+    NSDate *startTime;
 }
 
 -(IBAction) reconnectToServer:(id)sender;

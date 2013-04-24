@@ -1,5 +1,5 @@
 //
-//  MMSecondViewController.h
+//  MMHighScoreViewController.h
 //  MarbleMaze
 //
 //  Created by John Jachna on 4/19/13.
