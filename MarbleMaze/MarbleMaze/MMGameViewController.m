@@ -51,6 +51,49 @@
     
     self.manager.deviceMotionUpdateInterval = 0.05; // 20 Hz
     [self.manager startDeviceMotionUpdates];
+    
+    if(!connectPlayer){
+        /*
+         * Here we grab our path to our resource
+         */
+        NSString* resourcePath = [[NSBundle mainBundle] resourcePath];
+        resourcePath = [resourcePath stringByAppendingString:@"/connect.aif"];
+        NSError* err;
+        
+        //Initialize our player pointing to the path to our resource
+        connectPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:resourcePath] error:&err];
+        connectPlayer.delegate = self;
+        connectPlayer.numberOfLoops = 0;
+    }
+    
+    if(!beginPlayer){
+        /*
+         * Here we grab our path to our resource
+         */
+        NSString* resourcePath = [[NSBundle mainBundle] resourcePath];
+        resourcePath = [resourcePath stringByAppendingString:@"/begin.wav"];
+        NSError* err;
+        
+        //Initialize our player pointing to the path to our resource
+        beginPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:resourcePath] error:&err];
+        beginPlayer.delegate = self;
+        beginPlayer.numberOfLoops = 0;
+    }
+    
+    if(!endPlayer){
+        /*
+         * Here we grab our path to our resource
+         */
+        NSString* resourcePath = [[NSBundle mainBundle] resourcePath];
+        resourcePath = [resourcePath stringByAppendingString:@"/win.wav"];
+        NSError* err;
+        
+        //Initialize our player pointing to the path to our resource
+        endPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:resourcePath] error:&err];
+        endPlayer.delegate = self;
+        endPlayer.numberOfLoops = 0;
+    }
+
 }
 
 -(void) getValues:(NSTimer *) timer
@@ -71,6 +114,7 @@
 
 - (void)reconnectToServer:(id)sender
 {
+    [connectPlayer play];
     NSString *str = [NSString stringWithFormat:@"http://%@/connect", CURRENT_SERVER];
     NSLog(@"%@", str);
     NSURL *url = [NSURL URLWithString:str];

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface MMGameViewController : UIViewController <NSURLConnectionDelegate, NSXMLParserDelegate, UIAlertViewDelegate>
+@interface MMGameViewController : UIViewController <NSURLConnectionDelegate, NSXMLParserDelegate, UIAlertViewDelegate, AVAudioPlayerDelegate>
 {
     IBOutlet UILabel *xLabel;
     IBOutlet UILabel *yLabel;
@@ -22,6 +23,9 @@
     NSURLConnection *urlConnection;
     NSMutableData *xmlData;
     NSMutableString *CURRENT_SERVER;
+    AVAudioPlayer* connectPlayer;
+    AVAudioPlayer* beginPlayer;
+    AVAudioPlayer* endPlayer;
     
     UIAlertView *message;
 }
