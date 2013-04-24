@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MMHighScoreViewController : UIViewController
+@interface MMHighScoreViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     NSMutableString *highScores;
-    NSMutableDictionary *highScoreDict;
+    NSMutableArray *highScoreArray;
+    NSMutableString* CURRENT_SERVER;
 }
+@property (nonatomic, strong) UITableView *tableView;
 
 @end

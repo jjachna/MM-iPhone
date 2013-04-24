@@ -30,6 +30,7 @@
 		82062B22172395ED00E41D75 /* MarbleMaze114.png in Resources */ = {isa = PBXBuildFile; fileRef = 82062B21172395ED00E41D75 /* MarbleMaze114.png */; };
 		82062B2717244DA900E41D75 /* game.png in Resources */ = {isa = PBXBuildFile; fileRef = 82062B2517244DA900E41D75 /* game.png */; };
 		82062B2817244DA900E41D75 /* game@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 82062B2617244DA900E41D75 /* game@x2.png */; };
+		822586B117276066007121D2 /* Properties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 822586B017276066007121D2 /* Properties.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		82062B21172395ED00E41D75 /* MarbleMaze114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MarbleMaze114.png; sourceTree = SOURCE_ROOT; };
 		82062B2517244DA900E41D75 /* game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game.png; path = ../game.png; sourceTree = "<group>"; };
 		82062B2617244DA900E41D75 /* game@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game@x2.png"; path = "../game@x2.png"; sourceTree = "<group>"; };
+		822586B017276066007121D2 /* Properties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Properties.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				82062B031721C3B600E41D75 /* MMGameViewController.m */,
 				82062B091721C3B600E41D75 /* MMHighScoreViewController.h */,
 				82062B0A1721C3B600E41D75 /* MMHighScoreViewController.m */,
+				822586B017276066007121D2 /* Properties.plist */,
 				82062B0C1721C3B600E41D75 /* scores.png */,
 				82062B0E1721C3B600E41D75 /* scores@2x.png */,
 				82062B2517244DA900E41D75 /* game.png */,
@@ -213,6 +216,7 @@
 				82062B22172395ED00E41D75 /* MarbleMaze114.png in Resources */,
 				82062B2717244DA900E41D75 /* game.png in Resources */,
 				82062B2817244DA900E41D75 /* game@x2.png in Resources */,
+				822586B117276066007121D2 /* Properties.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +355,7 @@
 				82062B141721C3B600E41D75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

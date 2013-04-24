@@ -25,8 +25,17 @@
     
     xmlData = [[NSMutableData alloc] init];
     isConnected = NO;
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setBool:NO forKey:@"isConnected"];
     
-    CURRENT_SERVER = @"192.168.2.1"; // Raspberry Pi AP IP
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Properties" ofType:@"plist"];
+    NSDictionary *rootDict = [[NSDictionary alloc] initWithContentsOfFile:path];
+    
+    CURRENT_SERVER = [[NSMutableString alloc] init];
+    CURRENT_SERVER = [rootDict objectForKey:@"SERVER"];
+    NSLog(@"%@", CURRENT_SERVER);
+    //CURRENT_SERVER = @"192.168.2.1"; // Raspberry Pi AP IP
     //    CURRENT_SERVER = @"192.168.2.11"; // Local Network
     
     NSString *str = [NSString stringWithFormat:@"http://%@/connect", CURRENT_SERVER];
@@ -42,8 +51,6 @@
     
     self.manager.deviceMotionUpdateInterval = 0.05; // 20 Hz
     [self.manager startDeviceMotionUpdates];
-    
-    
 }
 
 -(void) getValues:(NSTimer *) timer
@@ -60,7 +67,16 @@
     }
     
     redBall.transform = CGAffineTransformMakeTranslation(2.5*(180/M_PI)*self.manager.deviceMotion.attitude.pitch, -2.5*(180/M_PI)*self.manager.deviceMotion.attitude.roll);
-    
+}
+
+- (void)reconnectToServer:(id)sender
+{
+    NSString *str = [NSString stringWithFormat:@"http://%@/connect", CURRENT_SERVER];
+    NSLog(@"%@", str);
+    NSURL *url = [NSURL URLWithString:str];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    urlConnection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:YES];
+    [spinner startAnimating];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
@@ -70,17 +86,12 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    //NSLog(@"connection data: %@", xmlData);
-    
     isConnected = YES;
-    connStatus.image = [UIImage imageNamed: @"conn.png"];
+    connStatus.imageView.image = [UIImage imageNamed: @"conn.png"];
     [spinner stopAnimating];
-    
-    //    NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithData:xmlData];
-    //    xmlParser.delegate = self;
-    //    [xmlParser parse];
-    
-    
+
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setBool:YES forKey:@"isConnected"];
     
     xmlData = nil;
     urlConnection = nil;
@@ -89,9 +100,16 @@
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     isConnected = NO;
-    connStatus.image = [UIImage imageNamed: @"unconn.png"];
+    
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setBool:NO forKey:@"isConnected"];
+    
+    connStatus.imageView.image = [UIImage imageNamed: @"unconn.png"];
     NSLog(@"error: %@", error);
     [spinner stopAnimating];
+    
+    message = [[UIAlertView alloc] initWithTitle:@"Not Connected" message:@"The app is currently not connected to the Marble Maze.  Tap the connection status button to reconnect." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+    [message show];
 }
 
 - (void)didReceiveMemoryWarning

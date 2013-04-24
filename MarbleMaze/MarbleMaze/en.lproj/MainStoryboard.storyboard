@@ -33,7 +33,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="unconn.png" translatesAutoresizingMaskIntoConstraints="NO" id="hbI-XS-BA5"/>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ivd-8O-U1W"/>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Roll: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1S-98-kHR">
                                 <constraints>
@@ -70,28 +69,41 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9e-fz-Q4v">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="unconn.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reconnectToServer:" destination="2" eventType="touchUpInside" id="wcN-aW-cqT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ivd-8O-U1W" firstAttribute="centerY" secondItem="hbI-XS-BA5" secondAttribute="centerY" type="default" id="27l-Pz-5On"/>
                             <constraint firstAttribute="trailing" secondItem="NtH-8I-m7T" secondAttribute="trailing" constant="63" id="2Oj-is-kYt"/>
                             <constraint firstItem="y4O-hd-FxL" firstAttribute="top" secondItem="16" secondAttribute="top" constant="76" id="2z6-Rd-i3I"/>
-                            <constraint firstItem="hbI-XS-BA5" firstAttribute="centerX" secondItem="Ivd-8O-U1W" secondAttribute="centerX" type="default" id="6aq-xZ-0MY"/>
                             <constraint firstItem="t2d-BB-aqN" firstAttribute="centerX" secondItem="WgO-gT-HTf" secondAttribute="centerX" type="default" id="78m-Re-hRg"/>
                             <constraint firstItem="C1S-98-kHR" firstAttribute="trailing" secondItem="d25-tX-5M2" secondAttribute="trailing" type="default" id="818-6y-40c"/>
-                            <constraint firstItem="hbI-XS-BA5" firstAttribute="top" secondItem="16" secondAttribute="top" constant="5" id="8Ht-d3-9lp"/>
                             <constraint firstItem="Upe-C4-zff" firstAttribute="centerY" secondItem="16" secondAttribute="centerY" type="default" id="8Js-qq-RTL"/>
                             <constraint firstItem="NtH-8I-m7T" firstAttribute="top" secondItem="y4O-hd-FxL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Bbm-La-NFJ"/>
                             <constraint firstItem="t2d-BB-aqN" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="CfK-Su-y6F"/>
                             <constraint firstItem="t2d-BB-aqN" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="JOb-Ma-b5j"/>
+                            <constraint firstItem="C1S-98-kHR" firstAttribute="top" secondItem="16" secondAttribute="top" constant="77" id="PU2-pZ-GHc"/>
+                            <constraint firstItem="X9e-fz-Q4v" firstAttribute="leading" secondItem="q6h-i7-lMZ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="R1p-VA-W6E"/>
                             <constraint firstItem="q6h-i7-lMZ" firstAttribute="bottom" secondItem="Ivd-8O-U1W" secondAttribute="bottom" type="default" id="RU9-3q-rcD"/>
-                            <constraint firstItem="C1S-98-kHR" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="137" id="UjU-mY-X97"/>
-                            <constraint firstItem="hbI-XS-BA5" firstAttribute="leading" secondItem="q6h-i7-lMZ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Woh-kr-BIV"/>
-                            <constraint firstAttribute="trailing" secondItem="hbI-XS-BA5" secondAttribute="trailing" constant="5" id="ZX6-Li-GxY"/>
+                            <constraint firstItem="X9e-fz-Q4v" firstAttribute="centerX" secondItem="Ivd-8O-U1W" secondAttribute="centerX" type="default" id="UCw-fU-rvp"/>
+                            <constraint firstAttribute="trailing" secondItem="X9e-fz-Q4v" secondAttribute="trailing" constant="5" id="frM-wF-bma"/>
+                            <constraint firstItem="C1S-98-kHR" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="137" id="grR-Rw-Slg"/>
+                            <constraint firstItem="X9e-fz-Q4v" firstAttribute="top" secondItem="16" secondAttribute="top" constant="5" id="i5B-ql-sCu"/>
+                            <constraint firstItem="X9e-fz-Q4v" firstAttribute="centerY" secondItem="Ivd-8O-U1W" secondAttribute="centerY" type="default" id="jXg-r4-wVw"/>
                             <constraint firstItem="d25-tX-5M2" firstAttribute="leading" secondItem="C1S-98-kHR" secondAttribute="leading" type="default" id="qRD-f3-FON"/>
                             <constraint firstItem="y4O-hd-FxL" firstAttribute="leading" secondItem="NtH-8I-m7T" secondAttribute="leading" type="default" id="r9g-BB-ciO"/>
                             <constraint firstItem="t2d-BB-aqN" firstAttribute="centerX" secondItem="Upe-C4-zff" secondAttribute="centerX" type="default" id="rOo-y6-PVV"/>
-                            <constraint firstItem="t2d-BB-aqN" firstAttribute="top" secondItem="16" secondAttribute="top" constant="125" id="rk4-gv-aZT"/>
                             <constraint firstItem="WgO-gT-HTf" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="tiv-mn-JPF"/>
                             <constraint firstItem="d25-tX-5M2" firstAttribute="top" secondItem="C1S-98-kHR" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="tzz-lk-Hyq"/>
                             <constraint firstItem="d25-tX-5M2" firstAttribute="bottom" secondItem="t2d-BB-aqN" secondAttribute="bottom" type="default" id="wty-4c-Iq9"/>
@@ -100,7 +112,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Game" image="game.png" id="7"/>
                     <connections>
-                        <outlet property="connStatus" destination="hbI-XS-BA5" id="wci-4a-p92"/>
+                        <outlet property="connStatus" destination="X9e-fz-Q4v" id="HWB-fx-B8h"/>
                         <outlet property="redBall" destination="Upe-C4-zff" id="iNI-cQ-fLn"/>
                         <outlet property="spinner" destination="Ivd-8O-U1W" id="4SC-9H-cRW"/>
                         <outlet property="xLabel" destination="y4O-hd-FxL" id="LYV-Hq-gxa"/>
@@ -118,30 +130,7 @@
                     <view key="view" contentMode="scaleToFill" id="17">
                         <rect key="frame" x="0.0" y="20" width="480" height="251"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="22">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Loaded by the second view controller — an instance of MMSecondViewController — specified in the app delegate." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="23">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="cQR-IW-sY8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="22" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0q6-IA-e8m"/>
-                            <constraint firstAttribute="trailing" secondItem="23" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="fR4-wH-Ih7"/>
-                            <constraint firstItem="23" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fzb-YA-SeR"/>
-                            <constraint firstAttribute="centerY" secondItem="23" secondAttribute="centerY" type="user" id="llH-eD-iPS"/>
-                            <constraint firstAttribute="trailing" secondItem="22" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pc3-9Y-W42"/>
-                            <constraint firstItem="23" firstAttribute="top" secondItem="22" secondAttribute="bottom" constant="40" type="user" id="yUx-Ee-KEk"/>
-                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="High Scores" image="scores" id="6"/>
@@ -184,7 +173,8 @@
         <class className="MMGameViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MMGameViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="connStatus" candidateClass="UIImageView"/>
+                <relationship kind="action" name="reconnectToServer:"/>
+                <relationship kind="outlet" name="connStatus" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="redBall" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="xLabel" candidateClass="UILabel"/>

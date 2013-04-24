@@ -8,22 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MMGameViewController : UIViewController <NSURLConnectionDelegate, NSXMLParserDelegate>
+@interface MMGameViewController : UIViewController <NSURLConnectionDelegate, NSXMLParserDelegate, UIAlertViewDelegate>
 {
     IBOutlet UILabel *xLabel;
     IBOutlet UILabel *yLabel;
     
     IBOutlet UIImageView *redBall;
-    IBOutlet UIImageView *connStatus;
+    IBOutlet UIButton *connStatus;
     IBOutlet UIActivityIndicatorView *spinner;
     
     BOOL isConnected;
     
     NSURLConnection *urlConnection;
     NSMutableData *xmlData;
-    NSString *CURRENT_SERVER;
+    NSMutableString *CURRENT_SERVER;
     
-    UISwipeGestureRecognizer *swipe;
+    UIAlertView *message;
 }
+
+-(IBAction) reconnectToServer:(id)sender;
 
 @end
