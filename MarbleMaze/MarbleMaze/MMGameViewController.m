@@ -35,8 +35,6 @@
     CURRENT_SERVER = [[NSMutableString alloc] init];
     CURRENT_SERVER = [rootDict objectForKey:@"SERVER"];
     NSLog(@"%@", CURRENT_SERVER);
-    //CURRENT_SERVER = @"192.168.2.1"; // Raspberry Pi AP IP
-    //    CURRENT_SERVER = @"192.168.2.11"; // Local Network
     
     @try
     {
@@ -134,6 +132,10 @@
             else if (([responseBody rangeOfString:@"T"].location != NSNotFound) && gameRunning)
             {
                 NSLog(@"You Win!!!!!=========");
+                
+                // TODO: Can add handling for received time from micro here
+                #pragma mark -
+                
                 gameRunning = NO;
                 [endPlayer play];
             }
